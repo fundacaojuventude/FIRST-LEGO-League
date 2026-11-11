@@ -21,7 +21,7 @@ const viewButtons = document.querySelectorAll('[data-view]');
 for (const button of viewButtons) {
   button.addEventListener('click', () => {
     const [file, alt, caption] = views[button.dataset.view];
-    model.src = 'media/' + file;
+    model.src = '' + file;
     model.alt = alt;
     document.querySelector('#object-text').textContent = caption;
     for (const option of viewButtons) option.setAttribute('aria-pressed', String(option === button));

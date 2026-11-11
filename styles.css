@@ -6,12 +6,12 @@
 @media(max-width:660px){.wrap{--side:20px}.bar .wrap{gap:6px;font-size:12px;justify-content:space-between}.bar b::before{width:6px;height:6px}.topline{flex-wrap:wrap;gap:0}.logos{gap:10px}.logos img+img{padding-left:10px}.logos img{width:84px;height:30px}.menu{display:inline-flex;align-items:center;gap:6px;border:0;padding:10px 0;background:transparent;font-weight:600;font-size:14px}.menu span{font-size:18px}nav{display:none;width:100%;padding:8px 0 16px;border-top:1px solid var(--rule);flex-wrap:wrap;gap:12px 20px}nav.open{display:flex}.hero,.program,.season .wrap,.editions,.split{grid-template-columns:1fr}.hero{padding-top:28px;gap:24px;padding-bottom:30px}.hero .eyebrow{font-size:11px;margin:0}.hero h1{font-size:clamp(58px,13vw,82px);margin:12px 0 14px}.hero .lead{font-size:16px;margin-bottom:16px;max-width:42ch}.actions{gap:18px}.action{padding:12px 15px}.figurebox{aspect-ratio:1.64;border-bottom-left-radius:32px}.caption{margin-top:8px}.program{gap:18px;padding-block:38px}.eyebrow{margin-bottom:12px}.program h2{max-width:18ch}.season .wrap{gap:12px;padding-block:40px 28px}.specimen{height:220px}.closing,.footline{align-items:flex-start;flex-direction:column;gap:18px}.footlinks{justify-content:flex-start}.inside{padding-block:36px}.inside h1{font-size:54px}.editions,.split{gap:30px}.editions{padding-bottom:36px}th,td{font-size:14px;padding:10px 6px}.sub{padding-block:36px}}
 @media(prefers-reduced-motion:reduce){*,*::after{animation:none!important;transition:none!important}}
 
-@font-face {font-family:"Axiforma";src:url("fonts/axiforma-book.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap;}
-@font-face {font-family:"Axiforma";src:url("fonts/axiforma-book-italic.otf") format("opentype");font-weight:400;font-style:italic;font-display:swap;}
-@font-face {font-family:"Axiforma";src:url("fonts/axiforma-bold.otf") format("opentype");font-weight:700;font-style:normal;font-display:swap;}
-@font-face {font-family:"Axiforma";src:url("fonts/axiforma-bold-italic.otf") format("opentype");font-weight:700;font-style:italic;font-display:swap;}
-@font-face {font-family:"Axiforma";src:url("fonts/axiforma-extrabold.otf") format("opentype");font-weight:800;font-style:normal;font-display:swap;}
-@font-face {font-family:"Axiforma";src:url("fonts/axiforma-extrabold-italic.otf") format("opentype");font-weight:800;font-style:italic;font-display:swap;}
+@font-face {font-family:"Axiforma";src:url("axiforma-book.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap;}
+@font-face {font-family:"Axiforma";src:url("axiforma-book-italic.otf") format("opentype");font-weight:400;font-style:italic;font-display:swap;}
+@font-face {font-family:"Axiforma";src:url("axiforma-bold.otf") format("opentype");font-weight:700;font-style:normal;font-display:swap;}
+@font-face {font-family:"Axiforma";src:url("axiforma-bold-italic.otf") format("opentype");font-weight:700;font-style:italic;font-display:swap;}
+@font-face {font-family:"Axiforma";src:url("axiforma-extrabold.otf") format("opentype");font-weight:800;font-style:normal;font-display:swap;}
+@font-face {font-family:"Axiforma";src:url("axiforma-extrabold-italic.otf") format("opentype");font-weight:800;font-style:italic;font-display:swap;}
 :root {
   --ink:#172820; --paper:#f7f7f0; --forest:#183e30; --leaf:#76bc21;
   --bioglow-surface:#486450; --bioglow-green:#bfde8a; --bioglow-ink:#0f1821;
