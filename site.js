@@ -31,14 +31,33 @@ for (const button of viewButtons) {
   });
 }
 const teams = document.querySelector('#teams');
-if (teams) {
+const ageGroup = document.querySelector('#age-group');
+if (teams && ageGroup) {
   const euro = new Intl.NumberFormat('pt-PT', {style:'currency', currency:'EUR'});
-  teams.addEventListener('input', () => {
-    const n = teams.valueAsNumber;
-    const valid = teams.validity.valid && Number.isSafeInteger(n) && n >= 1;
-    const rates = [200, 180, 165];
-    const total = valid ? rates.slice(0, n).reduce((a, b) => a + b, 0) + Math.max(n - 3, 0) * 150 : 0;
-    document.querySelector('#early').textContent = valid ? euro.format(total) : '—';
-    document.querySelector('#late').textContent = valid ? euro.format(total * 1.1) : '—';
-  });
+  const rates = {
+    younger: {standard:[265,240,220], special:[220,200,185], standardNext:205, specialNext:170},
+    older: {standard:[365,340,325], special:[305,285,270], standardNext:305, specialNext:255}
+  };
+  function totalFor(count, firstRates, nextRate) {
+    return firstRates.slice(0, count).reduce((sum, rate) => sum + rate, 0) + Math.max(count - 3, 0) * nextRate;
+  }
+  function updateCosts() {
+    const selected = rates[ageGroup.querySelector('input:checked').value];
+    const standard = [...selected.standard, selected.standardNext];
+    const special = [...selected.special, selected.specialNext];
+    document.querySelectorAll('#fee-rows tr').forEach((row, index) => {
+      row.cells[1].textContent = euro.format(standard[index]);
+      row.cells[2].textContent = euro.format(special[index]);
+      row.cells[3].textContent = euro.format(special[index] * 1.1);
+    });
+    const count = teams.valueAsNumber;
+    const valid = teams.validity.valid && Number.isSafeInteger(count) && count >= 1;
+    const specialTotal = valid ? totalFor(count, selected.special, selected.specialNext) : 0;
+    document.querySelector('#standard-total').textContent = valid ? euro.format(totalFor(count, selected.standard, selected.standardNext)) : '—';
+    document.querySelector('#early').textContent = valid ? euro.format(specialTotal) : '—';
+    document.querySelector('#late').textContent = valid ? euro.format(specialTotal * 1.1) : '—';
+  }
+  teams.addEventListener('input', updateCosts);
+  ageGroup.addEventListener('change', updateCosts);
+  updateCosts();
 }
